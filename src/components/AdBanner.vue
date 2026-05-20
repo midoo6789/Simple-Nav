@@ -1,6 +1,6 @@
 <template>
   <div class="ad-container
-    h-2
+    h-full
     rounded-lg 
     p-4 
     flex 
@@ -18,7 +18,7 @@
       alt="建筑G博客"
       class="h-max w-full object-cover object-center"
     >
-    <span class="text-gray-500 dark:text-gray-400 text-center break-words">
+    <span class="block text-gray-500 dark:text-gray-400 text-center break-words w-full">
       {{ content }}
     </span>
   </div>

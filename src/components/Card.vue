@@ -1,6 +1,6 @@
 <template>
   <a :href="item.url" target="_blank" 
-     class="card-container flex flex-col bg-white dark:bg-gray-700 rounded shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] border-2 border-transparent relative overflow-hidden">
+     class="card-container flex flex-col bg-white dark:bg-gray-700 rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] border-2 border-transparent relative overflow-hidden">
     
     <!-- 信息区域 -->
     <div class="flex items-center p-3 sm:items-start sm:p-4">
@@ -128,11 +128,11 @@
 }
 
 .preview-image {
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
   margin-left: 15%;
-  margin-top: 2%;
-  transform: rotate(-2deg);
+  margin-top: 1%;
+  transform: rotate(-3deg);
   transform-origin: top right;
   object-fit: cover;
   border: 1px solid #dadada;

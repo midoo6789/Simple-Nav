@@ -40,7 +40,7 @@
           <!-- 数据展示 -->
           <div v-else>
             <div 
-              class="grid gap-6" 
+              class="grid gap-3 md:gap-6" 
               :class="{
                 'grid-cols-2 md:grid-cols-3': columns === 3,
                 'grid-cols-2 md:grid-cols-4': columns === 4,
@@ -56,7 +56,7 @@
                 <!-- 修正广告显示逻辑 -->
                 <AdBanner 
                   v-if="index === 9" 
-                  class="col-span-full h-[120px] bg-blue-50 dark:bg-blue-900 mt-4"
+                  class="hidden sm:block col-span-full h-[120px] bg-blue-50 dark:bg-gray-900 mt-4"
                 />
               </template>
             </div>
