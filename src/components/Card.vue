@@ -1,20 +1,35 @@
 <template>
   <a :href="item.url" target="_blank" 
-     class="card-container flex items-start bg-white dark:bg-gray-700 p-3 sm:p-4 rounded shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] border-2 border-transparent relative">
+     class="card-container flex flex-col bg-white dark:bg-gray-700 rounded shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] border-2 border-transparent relative overflow-hidden">
     
-    <!-- 调整图标大小 -->
-    <img :src="item.icon" alt="icon" class="w-8 h-8 sm:w-12 sm:h-12 mr-3 sm:mr-4" />
+    <!-- 信息区域 -->
+    <div class="flex items-center p-3 sm:items-start sm:p-4">
+      <img :src="item.icon" alt="icon" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 sm:mt-0.5 flex-shrink-0" />
+      <div class="flex-1 min-w-0">
+        <h3 class="text-sm sm:text-base font-bold truncate">{{ item.name }}</h3>
+        <p 
+          class="desc-text text-xs text-gray-600 dark:text-gray-400"
+          :title="item.description"
+        >
+          {{ item.description }}
+        </p>
+      </div>
+    </div>
     
-    <div class="flex-1">
-      <!-- 调整标题大小 -->
-      <h3 class="text-base sm:text-lg font-bold">{{ item.name }}</h3>
-      <!-- 调整描述文本 -->
-      <p 
-        class="desc-text text-xs sm:text-sm text-gray-600 dark:text-gray-400"
-        :title="item.description"
-      >
-        {{ item.description }}
-      </p>
+    <!-- 预览图片区域 - 仅桌面端显示 -->
+    <div v-if="previewState !== 'error'" ref="previewArea" class="preview-area relative w-full flex-1 min-h-0 hidden sm:block overflow-hidden">
+      <img
+        v-if="previewSrc"
+        :src="previewSrc"
+        alt="preview"
+        class="preview-image"
+        loading="lazy"
+        @load="onPreviewLoad"
+        @error="onPreviewError"
+      />
+      <div v-if="previewState === 'loading'" class="preview-overlay absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-600">
+        <i class="fas fa-spinner fa-spin text-gray-400 dark:text-gray-500 text-2xl"></i>
+      </div>
     </div>
     
     <!-- 操作按钮组 -->
@@ -50,17 +65,22 @@
 
 <style scoped>
 .desc-text {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  display: none;
   overflow: hidden;
   line-height: 1.4;
   word-break: break-all;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
-/* 移除自定义提示框相关样式 */
+@media (min-width: 640px) {
+  .desc-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+
 .card-container:hover {
   animation: borderPulse 2s infinite;
 }
@@ -71,7 +91,6 @@
   100% { border-color: rgba(216, 180, 254, 0.5); }
 }
 
-/* 修复黑暗模式样式 - 使用全局选择器 */
 :global(.dark) .card-container:hover {
   animation: borderPulseDark 2s infinite;
 }
@@ -103,14 +122,63 @@
 .card-container:hover .card-actions .action-btn:not(.text-yellow-500) {
   opacity: 1 !important;
 }
+
+.preview-area {
+  background: inherit;
+}
+
+.preview-image {
+  width: 110%;
+  height: 110%;
+  margin-left: 15%;
+  margin-top: 2%;
+  transform: rotate(-2deg);
+  transform-origin: top right;
+  object-fit: cover;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+}
+
+:global(.dark) .preview-image {
+  border-color: #555;
+}
+
+.preview-overlay {
+  z-index: 5;
+}
 </style>
 
 <script>
+import { getPreviewUrl, markPreviewCached } from '../utils/previewCache';
+
+let globalLoadQueue = [];
+let isProcessingQueue = false;
+
+function processQueue() {
+  if (isProcessingQueue || globalLoadQueue.length === 0) return;
+  isProcessingQueue = true;
+  const item = globalLoadQueue.shift();
+  item.callback();
+  setTimeout(() => {
+    isProcessingQueue = false;
+    processQueue();
+  }, 800);
+}
+
+function enqueueLoad(callback) {
+  globalLoadQueue.push({ callback });
+  processQueue();
+}
+
 export default {
+  emits: ['favorite-changed', 'edit', 'delete'],
   props: ['item'],
   data() {
     return {
-      favoriteItems: JSON.parse(localStorage.getItem('favoriteItems')) || []
+      favoriteItems: JSON.parse(localStorage.getItem('favoriteItems')) || [],
+      previewState: 'idle',
+      previewSrc: null,
+      observer: null
     };
   },
   computed: {
@@ -118,7 +186,43 @@ export default {
       return this.favoriteItems.includes(this.item.id);
     }
   },
+  mounted() {
+    this.setupLazyLoad();
+  },
+  beforeUnmount() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  },
   methods: {
+    setupLazyLoad() {
+      const previewArea = this.$refs.previewArea;
+      if (!previewArea) return;
+      
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.observer.disconnect();
+            enqueueLoad(() => {
+              this.previewSrc = getPreviewUrl(this.item.url);
+              this.previewState = 'loading';
+            });
+          }
+        });
+      }, {
+        rootMargin: '200px'
+      });
+      
+      this.observer.observe(previewArea);
+    },
+    onPreviewLoad() {
+      this.previewState = 'loaded';
+      markPreviewCached(this.item.url);
+    },
+    onPreviewError() {
+      this.previewState = 'error';
+      this.previewSrc = null;
+    },
     toggleFavorite() {
       let favorites = JSON.parse(localStorage.getItem('favoriteItems')) || [];
       const itemId = this.item.id;
