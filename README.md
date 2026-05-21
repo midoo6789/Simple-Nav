@@ -49,7 +49,8 @@
 
 4、在构建部署配置中按下图填写，然后点完成就可以了。
 
-![配置](https://nav.293948 xyz/img/demo3.png)
+![配置]
+(https://nav.293948 xyz/img/demo3.png)
 
 5、在项目设置中，将“环境变量”中的“VITE\_API\_PASSWORD”设置为你自己的密码。（用于直接增加网址功能）
 ![获取](https://nav.293948.xyz/img/mima.png)
