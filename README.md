@@ -33,7 +33,7 @@
 
 ## 维基云表格
 
-[表格链接](https://vika.cn/share/shrxaWuBbbn6cKWBwvXgV/dstfGaY66aN2wyLlmX/viwullRf3ubdS)
+[维基云网站链接](https://vika.cn/)
 
 ![表格](https://nav.shuichanga.cn/img/demo2.png)
 
@@ -45,7 +45,7 @@
 
 我自己是使用的腾讯 EdgeOne Pages 布署的，免费快速。
 
-1、Fork项目（<https://github.com/jianzhugo/Simple-Nav）>
+1、Fork项目（<https://github.com/midoo6789/Simple-Nav）>
 
 2、打开下方 EdgeOne Pages 地址
 
