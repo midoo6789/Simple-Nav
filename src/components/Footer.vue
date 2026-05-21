@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-transparent py-4 text-center text-sm text-gray-600 dark:text-gray-400">
-    <div>© {{ new Date().getFullYear() }} nav.293948.xyz</div>
+    <div>© {{ new Date().getFullYear() }} nav.293948.xyz  简单导航</div>
     <div>已稳定运行: {{ uptime }}</div> 
   </footer>
 </template>
