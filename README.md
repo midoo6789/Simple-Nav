@@ -116,7 +116,7 @@ VITE_VIKA_VIEW_ID=your_view_id_here
 ## 直接增加网址
 
 点击右上角的“+”号，输入网址和分类，即可直接增加网址。（需验证密码）
-![api](https://nav.shuichanga.cn/img/zengjiawangzhi.png)
+![api](https://nav.shuichanga.cn/img/zengjiawangzhi.png)   
 
 ## 其它
 
