@@ -2,7 +2,7 @@
   <nav class="h-12 sticky top-0 z-30 bg-white rounded-xl dark:bg-gray-800 shadow-md px-4 py-2 flex justify-between items-center">
     <!-- 修改为 router-link 以实现跳转 -->
     <router-link to="/" class="text-xl font-bold text-blue-500">
-      <i class="fas fa-heart"></i> 少即是多
+      <i class="fas fa-heart"></i> 偷阅人间
     </router-link>
     
     <!-- 修改搜索区域显示逻辑 -->
@@ -74,7 +74,7 @@
       <!-- 新增GitHub图标 -->
       <div class="relative group w-8 h-8 flex items-center justify-center">
         <a 
-          href="https://github.com/jianzhugo/Simple-Nav" 
+          href="https://github.com/midoo6789/Simple-Nav" 
           target="_blank"
           class="w-full h-full flex items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
         >
