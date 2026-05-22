@@ -25,9 +25,9 @@
 
 ![演示站](https://nav.293948.xyz/img/demo1.png)
 
-## 维基云表格
+## 维格云表格
 
-[维基云网站链接](https://vika.cn/)
+[维格云网站链接](https://vika.cn/)
 
 ![表格](https://nav.293948.xyz/img/demo2.png)
 
