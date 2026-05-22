@@ -116,6 +116,7 @@ export default {
       "云上平台": "fa-solid fa-cloud-upload-alt",
       "杂项工具": "fa-solid fa-cogs",
       "在线工具": "fa-solid fa-wrench",
+      "休闲娱乐": "fa-solid fa-image",
       "AI产品线": "fa-solid fa-fire"
       }
       // 从localStorage读取图标映射
