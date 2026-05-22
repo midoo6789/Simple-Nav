@@ -70,7 +70,7 @@
 
 在设置中填入相应的APIkey、datasheetId、viewId。
 
-![api](https://nav.293948.xyz/img/dwmo8.png)
+![api](https://nav.293948.xyz/img/demo8.png)
 
 #### 方法二：通过环境变量配置
 
