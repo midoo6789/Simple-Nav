@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://nav.293948.xyz"><img height="100px" alt="logo" src="https://kyal.cn/logo.png"></a>
+<a href="https://nav.293948.xyz"><img height="100px" alt="logo" src="https://nav.293948.xyz/img/logo.png"></a>
   <p style="color:blue;font-size:20px;">Simple NAV</p>
   <p><em>自用简约的网址导航站，完全用AI采用vue框架开发。导航数据通过维基云表格编辑，无需数据库，无需后端，简单且方便。</em></p>
 </div>
