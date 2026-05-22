@@ -46,50 +46,6 @@
               </ul>
             </div>
             
-            <!-- 新增关于作者区块 -->
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-6">
-              <i class="fas fa-user-circle text-red-500 text-xl mb-2"></i>
-              <h3 class="text-xl font-semibold mb-2">关于作者</h3>
-              <div class="text-gray-600 dark:text-gray-300 space-y-2">
-                <p>🕴️ 开发者：水常（Shui Chang）</p>
-                <p>🚀 带娃建筑师 | AI技术学习者 | 个人博主</p>
-                <p>🏠 个人主页： 
-                  <a 
-                    href="https://www.jianzhugo.cn" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    水常&Shui Chang
-                  </a>
-                </p>
-                <p>🌐 个人博客： 
-                  <a 
-                    href="https://blog.jianzhugo.cn" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    建筑G博客
-                  </a>
-                </p>
-                <p>💰 更多AI作品： 
-                  <a 
-                    href="https://donate.jianzhugo.cn" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    打赏页面
-                  </a>
-                  <a 
-                    href="https://love.jianzhugo.cn" 
-                    target="_blank"
-                    class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 underline"
-                  >
-                    情侣网站
-                  </a>
-                </p>
-              </div>
-            </div>
-            
             <!-- 数据统计区块 -->
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
               <i class="fas fa-chart-line text-green-500 text-xl mb-2"></i>
