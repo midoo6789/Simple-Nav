@@ -107,7 +107,6 @@ export default {
         return 'fas fa-star';
       }
       {
-      "我的收藏": "fa-solid fa-image",
       "开源替代": ":fa-solid fa-palette",
       "个人博客": "fa-solid fa-blog",
       "破解资源": "fa-solid fa-key",
