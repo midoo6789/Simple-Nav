@@ -70,7 +70,7 @@
 
 在设置中填入相应的APIkey、datasheetId、viewId。
 
-![api](https://cdn.jsdmirror.com/gh/jianzhugo/image01/20251217130610676.png)
+![api](https://nav.293948.xyz/img/dwmo8.png)
 
 #### 方法二：通过环境变量配置
 
@@ -96,7 +96,7 @@ VITE_VIKA_VIEW_ID=your_view_id_here
 
 在设置中自定义分类图标。
 
-![图标映射](https://cdn.jsdmirror.com/gh/jianzhugo/image01/20251217130740909.png)
+![图标映射](https://nav.293948.xyz/img/demo9.png)
 
 4、配置导入导出
 
