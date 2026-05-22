@@ -39,7 +39,7 @@
 
 我自己是使用的腾讯 EdgeOne Pages 布署的，免费快速。
 
-1、Fork项目（<https://github.com/midoo6789/Simple-Nav）>
+1、Fork项目（<https://github.com/midoo6789/Simple-Nav>）
 
 2、打开下方 EdgeOne Pages 地址
 
