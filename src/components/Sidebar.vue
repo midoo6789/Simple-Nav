@@ -106,37 +106,37 @@ export default {
       if (category === '我的收藏') {
         return 'fas fa-star';
       }
-         (category === '开源替代') {
+      if   (category === '开源替代') {
         return 'fas fa-palette';
       }
-         (category === '个人博客') {
+      if   (category === '个人博客') {
         return 'fas fa-blog';
       }
-         (category === '破解资源') {
+      if   (category === '破解资源') {
         return 'fas fa-key';
       }
-         (category === '网络存储') {
+      if   (category === '网络存储') {
         return 'fas fa-cloud';
       }
-         (category === '网站相关') {
+      if   (category === '网站相关') {
         return 'fas fa-wifi';
       }
-         (category === '影视在线') {
+      if   (category === '影视在线') {
         return 'fas fa-film';
       }
-         (category === '云上平台') {
+      if   (category === '云上平台') {
         return 'fas fa-cloud-upload-alt';
       }
-         (category === '杂项工具') {
+      if   (category === '杂项工具') {
         return 'fas fa-cogs';
       }
-         (category === '在线工具') {
+      if   (category === '在线工具') {
         return 'fas fa-wrench';
       }
-         (category === '休闲娱乐') {
+      if   (category === '休闲娱乐') {
         return 'fas fa-gamepad';
       }
-         (category === 'AI产品线') {
+      if   (category === 'AI产品线') {
         return 'fas fa-fire';
      }
       // 从localStorage读取图标映射
