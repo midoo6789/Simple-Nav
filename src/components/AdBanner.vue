@@ -15,7 +15,7 @@
     <img 
       v-if="imageUrl"
       :src="imageUrl"
-      alt="建筑G博客"
+      alt="简单导航"
       class="h-max w-full object-cover object-center"
     >
     <span class="block text-gray-500 dark:text-gray-400 text-center break-words w-full">
