@@ -107,37 +107,37 @@ export default {
         return 'fas fa-star';
       }
          (category === '开源替代') {
-      return 'fas fa-palette';
+        return 'fas fa-palette';
       }
          (category === '个人博客') {
-      return 'fas fa-blog';
+        return 'fas fa-blog';
       }
          (category === '破解资源') {
-      return 'fas fa-key';
+        return 'fas fa-key';
       }
          (category === '网络存储') {
-      return 'fas fa-cloud';
+        return 'fas fa-cloud';
       }
          (category === '网站相关') {
-      return 'fas fa-wifi';
+        return 'fas fa-wifi';
       }
          (category === '影视在线') {
-      return 'fas fa-film';
+        return 'fas fa-film';
       }
          (category === '云上平台') {
-      return 'fas fa-cloud-upload-alt';
+        return 'fas fa-cloud-upload-alt';
       }
          (category === '杂项工具') {
-      return 'fas fa-cogs';
+        return 'fas fa-cogs';
       }
          (category === '在线工具') {
-      return 'fas fa-wrench';
+        return 'fas fa-wrench';
       }
          (category === '休闲娱乐') {
-      return 'fas fa-gamepad';
+        return 'fas fa-gamepad';
       }
          (category === 'AI产品线') {
-      return 'fas fa-fire';
+        return 'fas fa-fire';
      }
       // 从localStorage读取图标映射
       const savedIcons = localStorage.getItem('categoryIcons');
