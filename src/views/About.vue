@@ -15,7 +15,7 @@
                 <i class="fas fa-rocket text-blue-500 text-xl mb-2"></i>
                 <h3 class="text-xl font-semibold mb-2">项目简介</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                  一个简洁高效的导航站点，全AI开发，导航数据从维基云表格获取。以自己的使用习惯来开发。
+                  一个简洁高效的导航站点，全AI开发，导航数据从维格云表格获取。以自己的使用习惯来开发。
                 </p>
                 <p> 
                   
@@ -42,7 +42,7 @@
                 <li>响应式侧边栏布局</li>
                 <li>黑暗模式自动适配</li>                  
                 <li>多分类资源管理</li>
-                <li>从维基云表格获取数据，无需数据库</li>
+                <li>从维格云表格获取数据，无需数据库</li>
               </ul>
             </div>
             
